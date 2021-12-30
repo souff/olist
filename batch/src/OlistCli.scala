@@ -2,7 +2,7 @@ import org.apache.spark.sql.SparkSession
 object OlistCli {
   
     def listDelayedDeliveries(spark: SparkSession) = {
-        val df = spark.read.option("header", true).csv("data/olist_customers_dataset.csv")
+        val df = spark.read.option("header", true).csv("data/olist_orders_dataset.csv")
         df.show
     }
 
