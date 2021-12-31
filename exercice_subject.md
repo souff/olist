@@ -27,19 +27,6 @@
 ## Evaluation (100 points, 50 points required to have the module)
 
 
-- git clone <repository> with a README.md: 10 points
-
-- the README.md explain how to run the batch: 5 points
-
-- following README.md, the batch is running without error: 5 points
-
-- the batch generates a single CSV output file: 5 points
-
-- the CSV output file contains a list of customer identifiers: 5 points
-
-- all customer identifiers have a late delivery: 10 points
-
-- all customers having a late delivery are exported: 10 points
 
 - a procedure to run test is provided: 5 points
 
@@ -47,6 +34,5 @@
 
 - all tests are meaningful and test coverage > 80% of line of code : 15 points
 
-- the README.md explain how to package & run the batch on Amazon: 15 points
 
 - an architecture document explaining the solution is provided, including diagram(s) and explanations: 10 points

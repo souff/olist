@@ -3,11 +3,49 @@
 Table of contents:
 
 1. [information](#information)
-2. [execute the batch locally](#execute-the-batch-locally)
-3. [pakcage the batch](#package-the-batch)
-4. [run the batch on aws](#run-the-batch-on-aws)
+2. [architecture](#architecture)
+3. [execute the batch locally](#execute-the-batch-locally)
+4. [pakcage the batch](#package-the-batch)
+5. [run the batch on aws](#run-the-batch-on-aws)
 
 ## Information
+
+The data used for this project is the [olist data](https://www.kaggle.com/olistbr/brazilian-ecommerce) from kaggle. This
+is data from Brazilian E-commerce.
+
+The objective of this project is to extract all user who have received delivery with more than 10 day delay.
+
+In order to make the project more interessting their are some contraints on the times data:
+
+1. order_purchase_timestamp is by default in Sao Paulo timezone
+2. order_delivered_customer_date is by default in the customer delivery address timezone
+
+In order to work with all the timezone of brazil I had a csv with the timezone for each state. (This data comme from
+wikipedia [brazilian time zone](https://en.wikipedia.org/wiki/Time_in_Brazil)
+and [brazilian states](https://en.wikipedia.org/wiki/Federative_units_of_Brazil))
+
+To discover the data and test some piece of code I use a notebook, it is the olist.ipynb in the repository. To execute
+cells you need jupyter notebook with spylon kernel.
+
+## architecture
+
+The architecture of this project is based on batch olist application and file system.
+
+![architecture](docs/img/architecture.png)
+
+The olist batch is composed of 3 steps:
+
+1. get the user with more than 10 days delay and who didn't receive the order (except if the order is canceled)
+
+![date_null](docs/img/process_date_null.png)
+
+2. get the user with more than 10 days delay and who received the order
+
+![date](docs/img/process_date.png)
+
+3. merge the both result
+
+![merge](docs/img/merge.png)
 
 ## Execute the batch locally
 
