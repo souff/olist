@@ -1,0 +1,16 @@
+@startuml architecture
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+
+
+    actor user
+    Container(clean, "OList", "batch", $descr="extract user with more than 10 day delay")
+    Container(storage, "Storage", "filesystem", $descr="Contains all the data files")
+    Rel(user, clean, "trigger", "spark-submit")
+    Rel(clean, storage, "write", "fs")
+    Rel(clean, storage, "read", "fs")
+
+
+@enduml

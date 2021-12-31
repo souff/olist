@@ -1,0 +1,9 @@
+@startuml merge
+
+start
+:concat date and date null result;
+:save result in one csv;
+
+stop
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml processing_date_null
+
+start
+:read olist_orders_dataset.csv;
+:create columns order_utc;
+:extract order without delivery date and not canceled;
+:compute the delay between curent date (maximum date in data) and order date;
+:filter with delay more than 10;
+
+stop
+
+@enduml
