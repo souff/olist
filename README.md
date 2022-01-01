@@ -58,7 +58,7 @@ git clone https://github.com/souff/olist.git
 2. run the batch with mill
 
 ```shell
-mill batch.standolone.run
+mill batch.standalone.run
 ```
 
 ## package the batch
