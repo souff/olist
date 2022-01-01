@@ -52,7 +52,7 @@ The olist batch is composed of 3 steps:
 1. clone the repo
 
 ```shell
-git clone 
+git clone https://github.com/souff/olist.git
 ```
 
 2. run the batch with mill
